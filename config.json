@@ -1,0 +1,44 @@
+{
+    "output": "gpt.img",
+    "partitions": [
+        {
+            "type": "EFI",
+            "size": 65472,
+            "name": "BOOT"
+        },
+        {
+            "type": "BDP",
+            "size": 524288,
+            "name": "DATA"
+        },
+        {
+            "type": "LINUX_SWAP",
+            "size": 458752,
+            "name": "SWAP"
+        }
+    ],
+    "filesystems": [
+        {
+            "partition": "BOOT",
+            "directories": [
+                "/TEST",
+                "/TEST/DAVID",
+                "/SIPOS"
+            ],
+            "files": [
+                {
+                    "source": "errors.py",
+                    "destination":"/TEST/ERRORS.PY"
+                },
+                {
+                    "source": "gpt_parser.py",
+                    "destination": "/TEST/DAVID/PARSER.PY"
+                },
+                {
+                    "source": "main.py",
+                    "destination": "/SIPOS/MAIN.PY"
+                }
+            ]
+        }
+    ]
+}
